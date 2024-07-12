@@ -1,5 +1,12 @@
 <?php
 class Product extends Controller {
+    public function __construct() {
+        if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+            Flasher::setFlash('Akses ditolak', 'Anda Harus Login!', 'danger');
+            header('Location: ' . BASEURL . '/Auth');
+            exit;
+        }
+    }
     public function index()
     {
         $data['judul'] = 'Produk Page';

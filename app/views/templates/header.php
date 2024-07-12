@@ -7,9 +7,9 @@
    <link rel="stylesheet" href="<?= BASEURL ;?>/css/bootstrap.css">
 </head>
 <body>
-<header class="bg-dark text-white p-3 text-center">
+<header class="bg-dark text-white p-1 text-center">
         <div class="container">
-            <h1 class="display-4">Limbo</h1>
+            <h1 class="display-4">L I M B O</h1>
         </div>
     </header>
 
@@ -18,8 +18,23 @@
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand " href="<?= BASEURL; ?>/home/index">
-                <img src="<?= BASEURL; ?>/img/pngegg.png" alt="Nike Logo" width="50px" height="50px" >
+                <img src="<?= BASEURL; ?>/img/logo.jpg" alt="Nike Logo" width="50px" height="50px" >
             </a>
+
+            <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= BASEURL; ?>/Auth/logout">Logout</a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= BASEURL; ?>/Auth">Login</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+             </div>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

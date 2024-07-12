@@ -1,7 +1,7 @@
 <div class="container mt-5">
         <h1 class="mb-4">Products</h1>
         <div class="row">
-        <div class="col-lg-6">
+        <div class="col-md-6">
         <?php Flasher::flash(); ?>
         </div>
      </div>

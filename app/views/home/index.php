@@ -1,5 +1,38 @@
+<div class="container text-center">
+    <div class="row">
+    <img src="<?= BASEURL; ?>/img/cover2.jpg" class="img-fluid" alt="...">
+    </div>
+    <div class="row">
+        <figure class="text-center">
+    <blockquote class="blockquote">
+        <p>A well-known quote, contained in a blockquote element.</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+        Someone famous in <cite title="Source Title">Source Title</cite>
+    </figcaption>
+    </figure>
+    </div>
+    <div class="row">
+    <img src="<?= BASEURL; ?>/img/cover3.jpg" class="img-fluid" alt="...">
+    </div>
+    <div class="row">
+        <figure class="text-center">
+    <blockquote class="blockquote">
+        <p>A well-known quote, contained in a blockquote element.</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+        Someone famous in <cite title="Source Title">Source Title</cite>
+    </figcaption>
+    </figure>
+    </div>
+   <div class="row">
+    <img src="<?= BASEURL; ?>/img/jordan.png" class="img-fluid" alt="...">
+    </div>
+    
+</div>
 
     <!-- Carousel -->
+     <!-- 
     <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -30,9 +63,10 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div>
+    </div> -->
 
     <!-- Products Section -->
+     <!--
     <div class="container my-5">
         <div class="row">
             <div class="col-md-4">
@@ -66,7 +100,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center p-3">
