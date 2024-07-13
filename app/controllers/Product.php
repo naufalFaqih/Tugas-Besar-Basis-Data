@@ -11,16 +11,14 @@ class Product extends Controller {
     {
         $data['judul'] = 'Produk Page';
         $data['products']= $this->model('Product_model')->getAllProducts();
-        $this->view('templates/header', $data);
-        Flasher::flash(); // Menampilkan notifikasi
         $this->view('Product/index', $data);
+        Flasher::flash(); // Menampilkan notifikasi
         $this->view('templates/footer');
     }
 
     public function create() {
         $data['judul'] = 'Tambah Product';
         $data['categories'] = $this->model('Category_model')->getAllCategory();
-        $this->view('templates/header', $data);
         $this->view('Product/create', $data);
         $this->view('templates/footer');
     }
@@ -29,7 +27,6 @@ class Product extends Controller {
         $data['judul'] = 'Edit Product';
         $data['products'] = $this->model('Product_model')->getProductById($id);
         $data['categories'] = $this->model('Category_model') -> getAllCategory();
-        $this->view('templates/header', $data);
         $this->view('Product/edit', $data);
         $this->view('templates/footer');
     }
@@ -115,6 +112,8 @@ class Product extends Controller {
             exit;
         }
     }
+
+
     
 }
 

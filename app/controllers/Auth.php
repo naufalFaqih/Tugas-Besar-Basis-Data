@@ -20,9 +20,13 @@ class Auth extends Controller {
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['role'] = $user['role'];
 
-                Flasher::setFlash('Berhasil', 'login', 'success');
-                header('Location: ' . BASEURL . '/Product');
-                exit;
+                if ($user['role']=='admin'){
+                    Flasher::setFlash('Berhasil', 'login', 'success');
+                    header('Location: ' . BASEURL . '/Product');
+                    exit;
+                }
+                
+               
             } else {
                 Flasher::setFlash('Gagal', 'login', 'danger');
                 header('Location: ' . BASEURL . '/Auth');

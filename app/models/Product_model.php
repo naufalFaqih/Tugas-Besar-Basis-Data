@@ -46,6 +46,24 @@ class Product_model {
         $this->db->execute();
          return $this->db->rowCount();
     }
-    
+    public function updateStock($id, $quantity) {
+        $this->db->query("UPDATE $this->table SET stock = stock - :quantity WHERE id = :id");
+        $this->db->bind('quantity', $quantity);
+        $this->db->bind('id', $id);
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function searchProducts() {
+       
+        $keyword = $_POST['keyword'];
+        $query = "SELECT * FROM products WHERE name LIKE :keyword";
+        $this->db->query($query);
+        $this->db->bind('keyword', "%$keyword%");
+        return $this->db->resultSet();
+    }
 }
 
