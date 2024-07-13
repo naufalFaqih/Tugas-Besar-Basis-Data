@@ -42,4 +42,22 @@ class Sale_model {
         $this->db->bind('sale_id', $sale_id);
         return $this->db->resultSet();
     }
+
+    public function getSalesByUserId($userId) {
+        $this->db->query("SELECT * FROM $this->table WHERE user_id = :user_id");
+        $this->db->bind('user_id', $userId);
+        return $this->db->resultSet();
+    }
+
+    public function getSaleById($saleId) {
+        $this->db->query("SELECT * FROM $this->table WHERE id = :sale_id");
+        $this->db->bind('sale_id', $saleId);
+        return $this->db->single();
+    }
+
+    public function getSaleItemsBySaleId($saleId) {
+        $this->db->query("SELECT si.*, p.name as product_name, p.image as product_image FROM sale_items si JOIN products p ON si.product_id = p.id WHERE si.sale_id = :sale_id");
+        $this->db->bind('sale_id', $saleId);
+        return $this->db->resultSet();
+    }
 }

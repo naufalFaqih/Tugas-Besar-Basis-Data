@@ -25,7 +25,7 @@
             <ul class="navbar-nav ml-auto">
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= BASEURL; ?>/Auth/logout">Logout</a>
+                        <a class="nav-link" href="<?= BASEURL; ?>/Auth/logout" onclick="return confirm('Apakah Anda yakin?')">Logout</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">

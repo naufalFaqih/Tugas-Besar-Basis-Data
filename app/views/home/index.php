@@ -103,8 +103,36 @@
     </div> -->
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center p-3">
+    <footer class="bg-dark text-white text-start p-3">
+        <!-- Footer
         <div class="container">
             <p>&copy; 2024 Limbo, Inc. All Rights Reserved.</p>
+        </div>
+         Footer -->
+        <div class="row ms-5 mt-5">
+            <div class="col">
+            <img src="<?= BASEURL; ?>/img/logo.jpg" class="rounded-4" width="auto" height="100px" alt="...">
+            <p class="text-start mt-3 fw-semibold text-secondary">Limbo Shoe Store</p>
+            </div>
+            <div class="col">
+                <h3>Quick Link</h3>
+                <ul class="navbar-nav ml-auto">
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-start mt-3 text-secondary" href="<?= BASEURL; ?>/Auth/logout">Logout</a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-start mt-3 text-secondary" href="<?= BASEURL; ?>/Auth">Login Admin</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+            </div>
+            <div class="col">
+                <h3>Contact</h3>
+                <p class="text-start mt-3 fw-semibold text-secondary">+6285283736668</p>
+                <p class="text-start fw-semibold text-secondary">naufalfaqih3@gmail.com</p>
+                <p class="text-start fw-semibold text-secondary">Tubagus Ismail Dalam, Sekeloa, Bandung</p>
+            </div>
         </div>
     </footer>

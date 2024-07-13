@@ -18,6 +18,15 @@ class User extends Controller {
         $this->view('templates/footer');
     }
 
+    public function purchaseDetail($saleId) {
+        $data['judul'] = 'Detail Pembelian';
+        $data['sale'] = $this->model('Sale_model')->getSaleById($saleId);
+        $data['sale_items'] = $this->model('Sale_model')->getSaleItemsBySaleId($saleId);
+        $this->view('templates/header', $data);
+        $this->view('user/purchaseDetail', $data);
+        $this->view('templates/footer');
+    }
+
     public function buy($product_id) {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $name = $_POST['name'];
@@ -48,7 +57,7 @@ class User extends Controller {
             $this->model('Product_model')->updateStock($product_id, $quantity);
 
             Flasher::setFlash('Berhasil', 'dibeli', 'success');
-            header('Location: ' . BASEURL . '/user');
+            header('Location: ' . BASEURL . '/user/purchaseDetail');
             exit;
         }
     }
