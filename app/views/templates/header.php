@@ -27,17 +27,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= BASEURL; ?>/home">Home</a>
+                        <a class="nav-link" href="<?= BASEURL; ?>/home">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= BASEURL; ?>/user">Products</a>
+                        <a class="nav-link" href="<?= BASEURL; ?>/user">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= BASEURL; ?>/user/purchases">Pembelian</a>
                     </li>
                     
                 </ul>
             
             <form class="d-flex" action="<?= BASEURL; ?>/User/search" method="POST">
-                <input class="form-control me-2" type="search" name="keyword" placeholder="Search" aria-label="Search" required>
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-2" type="search" name="keyword" placeholder="Cari Produk" aria-label="Search" required>
+                <button class="btn btn-outline-success" type="submit">Cari</button>
             </form>
             </div>
         </div>

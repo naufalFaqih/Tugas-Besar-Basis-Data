@@ -2,6 +2,7 @@
 
 class Customer_model {
     private $db;
+    private $table= 'customers';
 
     public function __construct() {
         $this->db = new Database;
@@ -13,12 +14,13 @@ class Customer_model {
         return $this->db->single();
     }
 
-    public function createCustomer($name, $email, $phone) {
-        $this->db->query('INSERT INTO customers (name, email, phone) VALUES (:name, :email, :phone)');
-        $this->db->bind(':name', $name);
-        $this->db->bind(':email', $email);
-        $this->db->bind(':phone', $phone);
+    public function addCustomer($data) {
+        $this->db->query("INSERT INTO $this->table (name, email, phone) VALUES (:name, :email, :phone)");
+        $this->db->bind('name', $data['name']);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('phone', $data['phone']);
         $this->db->execute();
-        return $this->db->rowCount();
+
+        return $this->db->lastInsertId();
     }
 }
