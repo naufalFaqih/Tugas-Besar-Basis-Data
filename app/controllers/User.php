@@ -27,6 +27,7 @@ class User extends Controller {
     }
    
     public function buy() {
+        date_default_timezone_set('Asia/Jakarta');
         // Validasi input form
         if (!isset($_POST['product_id']) || !isset($_POST['quantity']) || !isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['phone'])) {
             Flasher::setFlash('Error', 'Missing data in the purchase form', 'danger');
@@ -45,6 +46,11 @@ class User extends Controller {
         $product = $this->model('Product_model')->getProductById($product_id);
         if (!$product) {
             Flasher::setFlash('Error', 'Product not found', 'danger');
+            header('Location: ' . BASEURL . '/user');
+            exit;
+        }
+        if (!$this->model('Product_model')->updateStock($product_id, $quantity)) {
+            Flasher::setFlash('Error', 'Stok tidak mencukupi atau terjadi kesalahan saat memperbarui stok', 'danger');
             header('Location: ' . BASEURL . '/user');
             exit;
         }

@@ -46,17 +46,28 @@ class Product_model {
         $this->db->execute();
          return $this->db->rowCount();
     }
+    public function getStockById($id) {
+        $this->db->query("SELECT stock FROM $this->table WHERE id = :id");
+        $this->db->bind('id', $id);
+        return $this->db->single()['stock'];
+    }
     public function updateStock($id, $quantity) {
+        // Dapatkan stok terkini
+        $currentStock = $this->getStockById($id);
+
+        // Periksa apakah stok cukup
+        if ($currentStock < $quantity) {
+            return false;
+        }
+
+        // Perbarui stok
         $this->db->query("UPDATE $this->table SET stock = stock - :quantity WHERE id = :id");
         $this->db->bind('quantity', $quantity);
         $this->db->bind('id', $id);
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        $this->db->execute();
+        return $this->db->rowCount();
     }
+    
     public function searchProducts() {
        
         $keyword = $_POST['keyword'];

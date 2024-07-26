@@ -26,6 +26,7 @@
                         </div>
                         <form action="<?= BASEURL; ?>/User/buy/<?= $product['id']; ?>" method="post">
                             <div class="modal-body">
+                            <input type="hidden" name="product_id" value="<?= $product['id']; ?>">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Nama</label>
                                     <input type="text" class="form-control" id="name" name="name" required>

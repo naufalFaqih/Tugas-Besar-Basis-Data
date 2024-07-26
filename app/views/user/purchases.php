@@ -7,7 +7,7 @@
             <?php foreach ($data['sale'] as $purchase) : ?>
                 <li class="list-group-item">
                     <strong>ID Transaksi:</strong> <?php echo $purchase['id']; ?><br>
-                    <strong>Total Harga:</strong> Rp <?php echo number_format($purchase['total_amount'], 2); ?><br>
+                    <strong>Total Harga:</strong> $ <?php echo number_format($purchase['total_amount'], 2); ?><br>
                     <strong>Tanggal Pembelian:</strong> <?php echo date('F j, Y, g:i a', strtotime($purchase['sale_date'])); ?><br>
                     <strong>Nama Pembeli:</strong> <?php echo $purchase['customer_name'];?><br>
                     <strong>Email Pembeli:</strong> <?php echo $purchase['customer_email'];?><br>

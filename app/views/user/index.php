@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><?= $product['name']; ?></h5>
                         <p class="card-text"><?= $product['description']; ?></p>
-                        <p class="card-text"><strong>Rp<?= $product['price']; ?></strong></p>
+                        <p class="card-text"><strong>$<?= $product['price']; ?></strong></p>
                         <p class="card-text">Stok: <?= $product['stock']; ?></p>
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#buyModal<?= $product['id']; ?>">Beli</button>
                     </div>

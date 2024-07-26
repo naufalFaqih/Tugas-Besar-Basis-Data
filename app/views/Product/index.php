@@ -66,7 +66,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $product['name']; ?></h5>
                             <p class="card-text"><?php echo $product['description']; ?></p>
-                            <p class="card-text"><strong>Price:</strong> Rp <?php echo $product['price']; ?></p>
+                            <p class="card-text"><strong>Price:</strong> $ <?php echo $product['price']; ?></p>
                             <p class="card-text"><strong>Stock:</strong> <?php echo $product['stock']; ?></p>
                             <a href="<?= BASEURL; ?>/Product/edit/<?php echo $product['id']; ?>" class="btn btn-warning">Edit</a>
                             <a href="<?= BASEURL; ?>/Product/delete/<?= $product['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">Hapus</a>
